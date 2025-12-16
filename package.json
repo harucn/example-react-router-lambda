@@ -6,6 +6,7 @@
     "build:app": "react-router build",
     "build:rrs": "vite build -c vite.config.rrs.ts",
     "build:pkg": "node scripts/create-package.js",
+    "build:zip": "cd _deploy && zip -ry ../app.zip ./",
     "build": "npm-run-all -sl build:*",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
