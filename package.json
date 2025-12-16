@@ -3,7 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "react-router build",
+    "build:app": "react-router build",
+    "build:rrs": "vite build -c vite.config.rrs.ts",
+    "build": "npm-run-all -sl build:*",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc"
@@ -12,6 +14,7 @@
     "@react-router/node": "7.10.1",
     "@react-router/serve": "7.10.1",
     "isbot": "^5.1.31",
+    "npm-run-all2": "^8.0.4",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-router": "7.10.1"
