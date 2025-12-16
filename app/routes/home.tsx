@@ -8,6 +8,15 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Home() {
-  return <Welcome />;
+export async function loader() {
+  return "Welcome to React Router";
+}
+
+export default function Home({ loaderData }: Route.ComponentProps) {
+  return (
+    <>
+      <p>{loaderData}</p>
+      <Welcome />
+    </>
+  );
 }
