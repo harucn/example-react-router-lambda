@@ -5,6 +5,8 @@
 # React Router
 /.react-router/
 /build/
+/dist/
+/_deploy/
 *.zip
 
 # Terraform
