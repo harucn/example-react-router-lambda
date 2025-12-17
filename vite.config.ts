@@ -3,9 +3,12 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
-export default defineConfig({
-  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
-  ssr: {
-    noExternal: true,
-  },
+export default defineConfig(({ command }) => {
+  const isBuild = command === "build";
+  return {
+    plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+    ssr: {
+      noExternal: isBuild ? true : undefined,
+    },
+  };
 });
